@@ -1,15 +1,9 @@
-<html>
-<head>
-<h1 align="center">My Jumper Game</h1>
-<script>
 window.onload = function() {
 	let btn = document.getElementById("start");
 	let count = 0;
 	var t = Date.now();
 	var speed = 25;
 	var y = 200 ;
-	var timePassed = (Date.now() - t)/1000;
-	t = Date.now();
 
 	document.onkeydown = function(){
 		count += 1;
@@ -59,33 +53,3 @@ window.onload = function() {
 	context.fill();
 
 }
-
-</script>
-</head>
-<body>
-<p align="center">A fun flappy bird like game</p>
-<canvas id="canvas" width="600" height="400">
-You dont support this tag
-</canvas>
-<div align="center">
-<button id="Start">Start</button>
-</div>
-</body>
-</html>
-
-<style>
-head {
-	color : #FFFFFF;
-}
-body {
-	background-color : #ffce46; 
-}
-h1 {
-	color : #030303;
-}
-canvas{
-	width : 100%;
-	background-color : rgb(93, 240, 232);
-}
-
-</style>
