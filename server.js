@@ -3,7 +3,8 @@ var fs = require('fs');
 var path = require('path');
 const bodyParser = require('body-parser');
 var app = express()
-var _dir = "C://Users//IET//Desktop//javascript//"
+var _dir = __dirname+"/"
+//var _dir = "C://Users//IET//Desktop//javascript//JavaScript-Codes//"
 
 app.use(express.static('public'))
 app.use(bodyParser.json())
