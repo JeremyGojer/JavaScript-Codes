@@ -1,0 +1,10 @@
+body{
+    background-image: url('https://assets.editorial.aetnd.com/uploads/2009/10/adolf-hitler-gettyimages-119505258.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hello{
+
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
