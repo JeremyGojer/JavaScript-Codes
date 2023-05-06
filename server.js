@@ -60,6 +60,9 @@ app.get('/currency',(req,res)=>{
 app.get('/arrays',(req,res)=>{
     res.sendFile(_dir+'array.html');
 })
+app.get('/dates',(req,res)=>{
+    res.sendFile(_dir+'dates.html');
+})
 function primes(num){
     var ret="";
     var flag;
