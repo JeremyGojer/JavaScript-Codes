@@ -1,15 +1,21 @@
 var express = require('express');
+//for file io operations
 var fs = require('fs');
 var path = require('path');
+// to convert post request json to string
 const bodyParser = require('body-parser');
+
+var prime = require(__dirname+'/public/scripts/Prime.js')
+var calculator = require(__dirname+'/public/scripts/calculator.js')
 var app = express()
-var _dir = __dirname+"/"
-//var _dir = "C://Users//IET//Desktop//javascript//JavaScript-Codes//"
+var _dir = __dirname+"/public/"
 
 app.use(express.static('public'))
 app.use(bodyParser.json())
 
+
 app.use(bodyParser.urlencoded({extended:false}))
+
 app.get('/',(req,res)=>{
     
 	res.sendFile(_dir+'login.html')
@@ -44,7 +50,7 @@ app.get('/prime',(req,res)=>{
 	res.sendFile(_dir+'prime.html');
 })
 app.post('/prime',(req,res)=>{
-	res.send(primes(req.body.num));
+    res.send(prime(req.body.num))
 })
 // Calculator Program
 app.get('/calculator',(req,res)=>{
@@ -63,40 +69,4 @@ app.get('/arrays',(req,res)=>{
 app.get('/dates',(req,res)=>{
     res.sendFile(_dir+'dates.html');
 })
-function primes(num){
-    var ret="";
-    var flag;
-    for(let i=1;i<num;i++){
-        for(let j=2;j*j<=i;j++){
-        flag=false;
-            if(i%j==0){
-                flag=true
-                break;
-            }
-        }
-        if(!flag){
-            ret+= i+' '
-        }
-    }
-	return `<link rel="stylesheet" href="css/output.css" type="text/css">
-            <div class='output'>${ret}</div>`
-}
-function calculator(num1,num2,op){
-    let res = 0;
-	switch(op){
-        case '+': res =  (num1+num2)+' '
-                    break;
-        case '-': res = (num1-num2)+' '
-                    break;
-        case '*': res =  (num1*num2)+' '
-                    break;
-        case '/': res =  (num1/num2)+' '
-                    break;
-        case '%': res =  (num1%num2)+' '
-                    break;
-        default : return ('Enter valid operand')
-    }
-    return `<link rel="stylesheet" href="css/output.css" type="text/css">
-            <div class='output'>${res}</div>`
-}
-app.listen(9000,()=>{"Listening at port 9000"})
+app.listen(9000,()=>{console.log("Listening at port 9000")})

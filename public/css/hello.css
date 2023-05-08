@@ -1,7 +1,11 @@
-body{
-    background-image: url('https://assets.editorial.aetnd.com/uploads/2009/10/adolf-hitler-gettyimages-119505258.jpg');
+*{
+    cursor: crosshair;
+}
+html{
+    background-image: url('https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_535,w_952,x_0,y_0/dpr_1.5/c_limit,w_690/fl_lossy,q_auto/v1/galleries/2011/07/29/kitler-and-other-cats-that-look-like-hitler/hitler-cats-1_svq69g');
     background-size: cover;
     background-repeat: no-repeat;
+    height: 100%;
 }
 .hello{
 
