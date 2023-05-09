@@ -39,8 +39,14 @@ app.post('/formend',(req,res)=>{
 	console.log(JSON.stringify(req.body));
 	res.redirect('./form');
 })
+app.get('/games',(req,res)=>{
+	res.sendFile(_dir+'games.html');
+})
 app.get('/game',(req,res)=>{
 	res.sendFile(_dir+'bouncingball.html');
+})
+app.get('/game2',(req,res)=>{
+	res.sendFile(_dir+'boxgame.html');
 })
 app.get('/number',(req,res)=>{
 	res.sendFile(_dir+'numops.html');
